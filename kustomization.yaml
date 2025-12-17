@@ -2,6 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+  # App of Apps Application
+  - application.yaml
+
   # Cluster-level infrastructure components
   - cert-manager/argocd/cert-manager.yaml
   - cert-manager/argocd/cert-manager-issuers.yaml
