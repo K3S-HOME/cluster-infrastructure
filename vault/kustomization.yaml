@@ -7,6 +7,6 @@ resources:
   # - argocd/vault-secrets.yaml
 
   # External Secrets integration
-  - serviceaccount.yaml
+  # ServiceAccount is managed by external-secrets Helm chart
   - cluster-secret-store.yaml
   - vault-config-job.yaml
