@@ -12,7 +12,7 @@ metadata:
     # cert-manager가 인증서를 자동으로 발급하도록 설정
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   # TLS 설정
   tls:
   - hosts:
@@ -55,7 +55,7 @@ metadata:
     # cert-manager가 인증서를 자동으로 발급하도록 설정
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   # TLS 설정
   tls:
   - hosts:
@@ -97,7 +97,7 @@ metadata:
     # cert-manager가 인증서를 자동으로 발급하도록 설정
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   # TLS 설정
   tls:
   - hosts:
@@ -141,7 +141,7 @@ metadata:
     # Next.js Streaming SSR을 위해 버퍼링 비활성화
     nginx.ingress.kubernetes.io/proxy-buffering: "off"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   # TLS 설정
   tls:
   - hosts:
@@ -188,7 +188,7 @@ metadata:
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, PUT, DELETE, OPTIONS"
     nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   # TLS 설정
   tls:
   - hosts:
@@ -230,7 +230,7 @@ metadata:
     # cert-manager가 인증서를 자동으로 발급하도록 설정
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   # TLS 설정
   tls:
   - hosts:
@@ -273,7 +273,7 @@ metadata:
     # cert-manager가 인증서를 자동으로 발급하도록 설정
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   # TLS 설정
   tls:
   - hosts:
@@ -303,7 +303,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   tls:
   - hosts:
     - dev.todo0213.kro.kr
@@ -334,7 +334,7 @@ metadata:
     # Next.js Streaming SSR을 위해 버퍼링 비활성화
     nginx.ingress.kubernetes.io/proxy-buffering: "off"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   tls:
   - hosts:
     - dev.jaejadle.kro.kr
@@ -363,7 +363,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   tls:
   - hosts:
     - dev.minjo0213.kro.kr
@@ -392,7 +392,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   tls:
   - hosts:
     - dev.joossameng.kro.kr
@@ -423,7 +423,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   tls:
   - hosts:
     - s3.minio0213.kro.kr
@@ -452,7 +452,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   tls:
   - hosts:
     - minio.minio0213.kro.kr
@@ -500,7 +500,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-buffer-size: "16k"
     nginx.ingress.kubernetes.io/proxy-buffers-number: "4"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   # TLS 설정
   tls:
   - hosts:
@@ -541,7 +541,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   tls:
   - hosts:
     - umami0213.kro.kr
@@ -580,7 +580,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   tls:
   - hosts:
     - pgweb0213.kro.kr
@@ -625,7 +625,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   tls:
   - hosts:
     - vscode0213.kro.kr
@@ -674,7 +674,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   tls:
   - hosts:
     - argocd0213.kro.kr
@@ -710,7 +710,7 @@ metadata:
     # 프록시 버퍼링 비활성화 (스트리밍 응답)
     nginx.ingress.kubernetes.io/proxy-buffering: "off"
 spec:
-  ingressClassName: nginx
+  ingressClassName: haproxy
   tls:
   - hosts:
     - mas0213.kro.kr
