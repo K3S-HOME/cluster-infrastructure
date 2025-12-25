@@ -9,8 +9,7 @@ resources:
   - cert-manager/argocd/cert-manager.yaml
   - cert-manager/argocd/cert-manager-issuers.yaml
   - external-secrets/argocd/external-secrets.yaml
-  - ingress-nginx/argocd/ingress-nginx.yaml
-  - ingress-nginx/ingress.yaml
+  - ingress/ingresses.yaml
   - reloader/argocd/reloader.yaml
   - vault/argocd/vault.yaml
   - vault/argocd/vault-secrets.yaml
