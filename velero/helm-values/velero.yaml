@@ -76,12 +76,12 @@ credentials:
 
 # Backup schedules
 schedules:
-  # Daily full cluster backup
-  daily-backup:
+  # Weekly full cluster backup
+  weekly-backup:
     disabled: false
-    schedule: "0 2 * * *"  # 2 AM daily
+    schedule: "0 19 * * 4"  # Every Friday 4 AM KST (Thursday 19:00 UTC)
     template:
-      ttl: 168h  # 7 days (storage optimized)
+      ttl: 720h  # 30 days
       includedNamespaces:
         - "*"
       excludedNamespaces:
