@@ -34,7 +34,7 @@ nodeAgent:
   privileged: false
   resources:
     requests:
-      cpu: 50m  # Reduced from 100m to fit on all nodes
+      cpu: 30m  # Reduced to 30m to fit on mayne-worker-2 (99% CPU usage)
       memory: 256Mi
     limits:
       cpu: 1000m
