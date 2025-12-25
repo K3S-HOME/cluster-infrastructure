@@ -12,7 +12,7 @@ spec:
     # Helm chart from OTWLD repository
     repoURL: https://helm.otwld.com/
     chart: velero-ui
-    targetRevision: 0.2.4
+    targetRevision: "*"  # Use latest version
     helm:
       values: |
         # Image configuration
