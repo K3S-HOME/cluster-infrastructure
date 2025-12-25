@@ -23,3 +23,6 @@ resources:
   - haproxy/argocd/haproxy.yaml
   - metallb/argocd/metallb.yaml
   - metallb
+
+  # Ingress resources for HAProxy
+  - ingress/falco-ui-ingress.yaml
