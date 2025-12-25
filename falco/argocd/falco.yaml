@@ -20,10 +20,10 @@ spec:
           enabled: true
           kind: modern_ebpf
 
-        # Image configuration
+        # Image configuration - use regular falco image for modern_ebpf
         image:
           registry: docker.io
-          repository: falcosecurity/falco-no-driver
+          repository: falcosecurity/falco
           tag: 0.39.2
 
         # Resource requests
@@ -81,18 +81,6 @@ spec:
             key: node-role.kubernetes.io/master
           - effect: NoSchedule
             key: node-role.kubernetes.io/control-plane
-
-        # Extra volumes for modern_ebpf driver
-        extraVolumes:
-          - name: sys-fs-bpf
-            hostPath:
-              path: /sys/fs/bpf
-              type: Directory
-
-        extraVolumeMounts:
-          - name: sys-fs-bpf
-            mountPath: /sys/fs/bpf
-            readOnly: false
 
   destination:
     server: https://kubernetes.default.svc
