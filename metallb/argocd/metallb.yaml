@@ -27,7 +27,7 @@ spec:
               cpu: 50m
               memory: 64Mi
             limits:
-              cpu: 100m
+              # cpu: removed to prevent throttling
               memory: 128Mi
 
         # Speaker configuration (runs on each node)
@@ -42,7 +42,7 @@ spec:
               cpu: 50m
               memory: 64Mi
             limits:
-              cpu: 100m
+              # cpu: removed to prevent throttling
               memory: 128Mi
 
           # Tolerations to run on all nodes
