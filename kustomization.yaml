@@ -27,6 +27,7 @@ resources:
   # VPA and Goldilocks
   - vpa/argocd/vpa.yaml
   - goldilocks/argocd/goldilocks.yaml
+  - goldilocks  # Includes Goldilocks Dashboard Ingress
 
   # ArgoCD configuration
   - argocd  # Includes ArgoCD Ingress and configuration

@@ -4,3 +4,6 @@ kind: Kustomization
 resources:
   # ArgoCD Application 리소스는 infrastructure/kustomization.yaml에서 관리
   # - argocd/goldilocks.yaml
+
+  # Goldilocks Dashboard Ingress
+  - ingress/goldilocks-dashboard-ingress.yaml
