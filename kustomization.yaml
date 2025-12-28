@@ -24,10 +24,8 @@ resources:
   - metallb/argocd/metallb.yaml
   - metallb
 
-  # VPA and Goldilocks
+  # VPA (Vertical Pod Autoscaler)
   - vpa/argocd/vpa.yaml
-  - goldilocks/argocd/goldilocks.yaml
-  - goldilocks  # Includes Goldilocks Dashboard Ingress
 
   # ArgoCD configuration
   - argocd  # Includes ArgoCD Ingress and configuration
