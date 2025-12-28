@@ -5,27 +5,20 @@ resources:
   # App of Apps Application
   - application.yaml
 
-  # Cluster-level infrastructure components
-  - cert-manager/argocd/cert-manager.yaml
-  - cert-manager/argocd/cert-manager-issuers.yaml
-  - external-secrets/argocd/external-secrets.yaml
-  - reloader/argocd/reloader.yaml
-  - vault/argocd/vault.yaml
-  - vault/argocd/vault-secrets.yaml
+  # 각 앱의 ArgoCD Application 중앙 관리
+  - cert-manager/argocd-certmanager.yaml
+  - cert-manager/argocd-issuers.yaml
+  - external-secrets/argocd.yaml
+  - reloader/argocd.yaml
+  - vault/argocd-vault.yaml
+  - vault/argocd-secrets.yaml
+  - velero/argocd-velero.yaml
+  - velero/argocd-ui.yaml
+  - falco/argocd.yaml
+  - cnpg/argocd.yaml
+  - haproxy/argocd.yaml
+  - metallb/argocd.yaml
+  - vpa/argocd.yaml
 
-  # New infrastructure components
-  - velero/argocd/velero.yaml
-  - velero/argocd/velero-ui.yaml
-  - velero  # Includes Velero Ingress
-  - falco/argocd/falco.yaml
-  - falco  # Includes Falco Ingress
-  - cnpg/argocd/cnpg.yaml
-  - haproxy/argocd/haproxy.yaml
-  - metallb/argocd/metallb.yaml
-  - metallb
-
-  # VPA (Vertical Pod Autoscaler)
-  - vpa/argocd/vpa.yaml
-
-  # ArgoCD configuration
-  - argocd  # Includes ArgoCD Ingress and configuration
+  # ArgoCD configuration (no Application, just configuration)
+  - argocd
