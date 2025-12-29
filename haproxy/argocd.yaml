@@ -95,8 +95,9 @@ spec:
             # Rate limiting support
             rate-limit-requests: "0"
 
-          # Host network (optional, for better performance)
-          hostNetwork: false
+          # Host network - required for Oracle Cloud (MetalLB L2 doesn't work with VCN)
+          hostNetwork: true
+          dnsPolicy: ClusterFirstWithHostNet
 
           # Node selector
           nodeSelector: {}
