@@ -6,14 +6,11 @@ resources:
   - application.yaml
 
   # 각 앱의 ArgoCD Application 중앙 관리
-  - cert-manager/argocd-certmanager.yaml
-  - cert-manager/argocd-issuers.yaml
+  - cert-manager/argocd.yaml
   - external-secrets/argocd.yaml
   - reloader/argocd.yaml
-  - vault/argocd-vault.yaml
-  - vault/argocd-secrets.yaml
-  - velero/argocd-velero.yaml
-  - velero/argocd-ui.yaml
+  - vault/argocd.yaml
+  - velero/argocd.yaml
   - falco/argocd.yaml
   - cnpg/argocd.yaml
   - haproxy/argocd.yaml
