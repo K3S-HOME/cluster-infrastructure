@@ -4,12 +4,10 @@ metadata:
   name: haproxy
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
-
   source:
-    # Helm chart from HAProxy Ingress repository
     repoURL: https://haproxy-ingress.github.io/charts
     chart: haproxy-ingress
     targetRevision: 0.14.7
@@ -125,28 +123,26 @@ spec:
         serviceAccount:
           create: true
           name: haproxy-ingress
-
   destination:
     server: https://kubernetes.default.svc
     namespace: haproxy
-
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
       allowEmpty: false
-
     syncOptions:
-      - CreateNamespace=true
-      - PrunePropagationPolicy=foreground
-      - PruneLast=true
-      - ServerSideApply=true
-
+    - CreateNamespace=true
+    - PrunePropagationPolicy=foreground
+    - PruneLast=true
+    - ServerSideApply=true
     retry:
       limit: 5
       backoff:
         duration: 5s
         factor: 2
         maxDuration: 3m
-
+    managedNamespaceMetadata:
+      labels:
+        goldilocks.fairwinds.com/enabled: 'true'
   revisionHistoryLimit: 10
