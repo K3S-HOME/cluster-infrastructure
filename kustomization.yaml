@@ -12,7 +12,7 @@ resources:
   - cnpg/argocd.yaml
   - vpa/argocd.yaml
   - traefik/argocd.yaml
-  - kanidm/argocd.yaml
+  - authelia/argocd.yaml
 
   # ArgoCD configuration (no Application, just configuration)
   - argocd
