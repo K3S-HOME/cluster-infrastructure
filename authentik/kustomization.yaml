@@ -4,6 +4,5 @@ kind: Kustomization
 resources:
   - ingress.yaml
   - middleware.yaml
-  - postgres-cluster.yaml
   - vault/authentik-secrets.yaml
   - vault/postgres-credentials.yaml
