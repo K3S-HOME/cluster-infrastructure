@@ -25,6 +25,18 @@ global:
         secretKeyRef:
           name: authentik-secrets
           key: bootstrap-email
+    # PostgreSQL connection (CNPG)
+    - name: AUTHENTIK_POSTGRESQL__HOST
+      value: authentik-postgres-rw.authentik.svc.cluster.local
+    - name: AUTHENTIK_POSTGRESQL__NAME
+      value: authentik
+    - name: AUTHENTIK_POSTGRESQL__USER
+      value: authentik
+    - name: AUTHENTIK_POSTGRESQL__PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: authentik-postgres-credentials
+          key: password
 
 server:
   replicas: 1
@@ -44,20 +56,9 @@ worker:
     limits:
       memory: 512Mi
 
-# Embedded PostgreSQL
+# Disable embedded PostgreSQL - using CNPG instead
 postgresql:
-  enabled: true
-  auth:
-    password: "" # Will be auto-generated
-  image:
-    tag: 16
-  primary:
-    resources:
-      requests:
-        cpu: 50m
-        memory: 128Mi
-      limits:
-        memory: 256Mi
+  enabled: false
 
 # Embedded Redis
 redis:
