@@ -42,19 +42,19 @@ server:
   replicas: 1
   resources:
     requests:
-      cpu: 50m
-      memory: 256Mi
-    limits:
+      cpu: 100m
       memory: 512Mi
+    limits:
+      memory: 1Gi
 
 worker:
   replicas: 1
   resources:
     requests:
-      cpu: 50m
-      memory: 256Mi
-    limits:
+      cpu: 100m
       memory: 512Mi
+    limits:
+      memory: 1Gi
 
 # Disable embedded PostgreSQL - using CNPG instead
 postgresql:
