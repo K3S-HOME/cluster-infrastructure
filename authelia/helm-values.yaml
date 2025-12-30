@@ -45,7 +45,7 @@ configMap:
   session:
     cookies:
       - domain: kro.kr
-        authelia_url: https://auth0213.kro.kr
+        subdomain: auth0213
 
   # Storage - PostgreSQL (CNPG cluster)
   storage:
