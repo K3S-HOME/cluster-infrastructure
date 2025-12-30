@@ -2,7 +2,7 @@
 # Chart: https://charts.authelia.com
 
 # Domain configuration
-domain: mayne0213.kro.kr
+domain: mayne.kro.kr
 
 # Ingress - disabled, using separate ingress.yaml
 ingress:
@@ -47,8 +47,8 @@ configMap:
   # Session configuration
   session:
     cookies:
-      - domain: mayne0213.kro.kr
-        authelia_url: https://auth.mayne0213.kro.kr
+      - domain: mayne.kro.kr
+        authelia_url: https://auth.mayne.kro.kr
 
   # Storage - PostgreSQL (CNPG cluster)
   storage:
@@ -66,15 +66,21 @@ configMap:
       # Bypass for public services
       - domain:
           - mayne.kro.kr
+          - "*.mayne.kro.kr"
+          - jaejadle.kro.kr
           - "*.jaejadle.kro.kr"
+          - joossameng.kro.kr
           - "*.joossameng.kro.kr"
+          - jovies.kro.kr
           - "*.jovies.kro.kr"
+          - minjo0213.kro.kr
           - "*.minjo0213.kro.kr"
+          - todo0213.kro.kr
           - "*.todo0213.kro.kr"
         policy: bypass
-      # One factor for admin services
+      # One factor for admin services (*0213.kro.kr)
       - domain:
-          - "*.mayne0213.kro.kr"
+          - "*0213.kro.kr"
         policy: one_factor
 
   # Notifier - filesystem (no email)
@@ -86,7 +92,7 @@ configMap:
   # TOTP configuration
   totp:
     enabled: true
-    issuer: mayne0213.kro.kr
+    issuer: mayne.kro.kr
 
   # Identity providers (OIDC) - can be enabled later
   identity_providers:
