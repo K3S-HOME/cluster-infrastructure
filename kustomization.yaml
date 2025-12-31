@@ -10,7 +10,7 @@ resources:
   - velero/argocd.yaml
   - falco/argocd.yaml
   - cnpg/argocd.yaml
-  - vpa/argocd.yaml
+  # - vpa/argocd.yaml  # disabled for resource optimization
   - traefik/argocd.yaml
   - authelia/argocd.yaml
 
