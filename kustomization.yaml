@@ -8,7 +8,7 @@ resources:
   - external-secrets/argocd.yaml
   - vault/argocd.yaml
   - velero/argocd.yaml
-  - falco/argocd.yaml
+  # - falco/argocd.yaml  # disabled for resource optimization
   - cnpg/argocd.yaml
   # - vpa/argocd.yaml  # disabled for resource optimization
   - traefik/argocd.yaml
