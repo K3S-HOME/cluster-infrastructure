@@ -9,6 +9,24 @@ spec:
     deployment:
       replicas: 3
 
+    # Pod Anti-Affinity - 각 노드에 최대 1개씩만 배치
+    affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                app.kubernetes.io/name: traefik
+            topologyKey: kubernetes.io/hostname
+
+    # Master 노드에도 배치 허용
+    tolerations:
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+
     # Traefik Dashboard 활성화
     dashboard:
       enabled: true
