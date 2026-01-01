@@ -21,6 +21,12 @@ pod:
     - name: oidc-clients
       secret:
         secretName: authelia-oidc-clients
+    - name: oidc-jwks
+      secret:
+        secretName: authelia-secrets
+        items:
+          - key: OIDC_ISSUER_PRIVATE_KEY
+            path: OIDC_ISSUER_PRIVATE_KEY
   extraVolumeMounts:
     - name: users-database
       mountPath: /config/users_database.yml
@@ -28,6 +34,9 @@ pod:
       readOnly: true
     - name: oidc-clients
       mountPath: /secrets/oidc
+      readOnly: true
+    - name: oidc-jwks
+      mountPath: /secrets/jwks
       readOnly: true
 
 # ConfigMap configuration
@@ -86,7 +95,7 @@ configMap:
           algorithm: 'RS256'
           use: 'sig'
           key:
-            path: '/secrets/OIDC_ISSUER_PRIVATE_KEY'
+            path: '/secrets/jwks/OIDC_ISSUER_PRIVATE_KEY'
       cors:
         endpoints:
           - authorization
