@@ -81,6 +81,8 @@ configMap:
   identity_providers:
     oidc:
       enabled: true
+      jwks:
+        - key: '{{ secret "/secrets/identity_providers.oidc.jwks.key" | mindent 10 "|" | msquote }}'
       cors:
         endpoints:
           - authorization
