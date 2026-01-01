@@ -112,6 +112,7 @@ configMap:
           redirect_uris:
             - https://minio.minio0213.kro.kr/oauth_callback
             - https://minio0213.kro.kr/oauth_callback
+            - https://minio-console.minio0213.kro.kr/oauth_callback
           scopes:
             - openid
             - profile
