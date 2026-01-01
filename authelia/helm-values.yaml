@@ -18,25 +18,10 @@ pod:
     - name: users-database
       configMap:
         name: authelia-config
-    - name: oidc-clients
-      secret:
-        secretName: authelia-oidc-clients
-    - name: oidc-jwks
-      secret:
-        secretName: authelia-secrets
-        items:
-          - key: OIDC_ISSUER_PRIVATE_KEY
-            path: OIDC_ISSUER_PRIVATE_KEY
   extraVolumeMounts:
     - name: users-database
       mountPath: /config/users_database.yml
       subPath: users_database.yml
-      readOnly: true
-    - name: oidc-clients
-      mountPath: /secrets/oidc
-      readOnly: true
-    - name: oidc-jwks
-      mountPath: /secrets/jwks
       readOnly: true
 
 # ConfigMap configuration
@@ -85,26 +70,6 @@ configMap:
   totp:
     enabled: true
     issuer: mayne.kro.kr
-
-  # Identity providers (OIDC)
-  identity_providers:
-    oidc:
-      enabled: true
-      jwks:
-        - key_id: ''
-          algorithm: 'RS256'
-          use: 'sig'
-          key:
-            path: '/secrets/jwks/OIDC_ISSUER_PRIVATE_KEY'
-      cors:
-        endpoints:
-          - authorization
-          - token
-          - revocation
-          - introspection
-          - userinfo
-        allowed_origins_from_client_redirect_uris: true
-      clients: []
 
 # Secret configuration - use existing secret from Vault
 secret:
