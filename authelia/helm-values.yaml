@@ -11,9 +11,9 @@ pod:
   resources:
     requests:
       cpu: 25m
-      memory: 64Mi
-    limits:
       memory: 128Mi
+    limits:
+      memory: 256Mi
   extraVolumes:
     - name: users-database
       configMap:
