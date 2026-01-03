@@ -77,8 +77,7 @@ configuration:
 
   # Disable backup-sync controller (user only uses manual backups)
   # This prevents lastSyncedTime updates that trigger ArgoCD refreshes
-  disableControllers:
-    - backup-sync
+  disableControllers: backup-sync
 
 # Credentials for S3 access (from Vault via External Secrets)
 credentials:
